@@ -139,7 +139,7 @@ nav.navbar.navbar-expand-lg.bg-body-tertiary {
     background: #416446;
     color: rgb(255, 255, 255) !important;
     transition: all .4s ease-in-out !important;
-    background: #000000 !important;
+    background: #416446 !important;
     cursor: pointer;
     border: none !important;
 }
@@ -670,16 +670,11 @@ nav.navbar.navbar-expand-lg.bg-body-tertiary {
     flex-direction: column;
     padding: 27px 0px;
     cursor: pointer;
-    transition: all 1s ease-in-out;
+    transition: all .4s ease-in-out;
 }
-
 .process-main-box-sub-box:hover {
-    transform: rotate(359deg);
-}
-
-/* .process-main-box-sub-box:hover {
     transform: scale(1.05);
-} */
+} 
 
 .process-icons {
     margin-top: 20px;
@@ -696,7 +691,18 @@ nav.navbar.navbar-expand-lg.bg-body-tertiary {
     text-align: center;
     font-size: 14px;
 }
-
+.process-second-icon{
+    background-image: url("../../Images/Process/process-second-icon.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.process-four-icon{
+    background-image: url("../../Images/Process/process-third-icon.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .testimonial-heading-box {
     width: 100%;
     /* border: 2px solid pink; */
@@ -735,12 +741,24 @@ nav.navbar.navbar-expand-lg.bg-body-tertiary {
 
 .testimonials-item {
     background-color: hsl(0, 0%, 100%);
-    padding: 40px 20px;
+    padding: 0px 20px;
     border-radius: 0px;
     display: flex !important;
-    border-bottom-left-radius: 20px;
+    overflow: hidden;
+    transition: all .4s ease-in-out !important;
 }
-
+.testimonials-item:hover{
+    background: #CD6A4A;
+}
+.testimonials-item:hover .writer-name-testimonial {
+color: white !important;
+}
+.testimonials-item:hover p{
+    color: white !important;
+}
+.testimonials-item:hover .comma-image-adjust{
+   filter: invert(100);
+}
 .testimonials-item .info {
     width: 20%;
     display: flex;
@@ -753,7 +771,7 @@ nav.navbar.navbar-expand-lg.bg-body-tertiary {
     width: 80%;
     /* border: 2px solid pink; */
     padding: 0px 10px;
-    padding-left: 50px;
+    padding-left: 40px;
     position: relative;
 }
 
@@ -762,10 +780,11 @@ nav.navbar.navbar-expand-lg.bg-body-tertiary {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 20px;
 }
 
 .writer-name-testimonial {
-    font-size: 20px;
+    font-size: 19px;
     color: #000000;
     font-weight: 500;
 }
@@ -817,7 +836,7 @@ nav.navbar.navbar-expand-lg.bg-body-tertiary {
 }
 
 span.swiper-pagination-bullet {
-    background: hsl(36, 88%, 66%) !important;
+    background: hsl(0deg 0% 0%) !important;
     font: 30px;
     width: 20px;
     height: 20px;
@@ -858,7 +877,7 @@ section#Career {
 .Career-main-box-left{
     width: 32%;
     /* border: 2px solid orangered; */
-    background-image: url("../../Images/career/career-left-image.png");
+    background-image: url("../../Images/employer-to-Reject/employer-to-Reject-image.png");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -892,10 +911,10 @@ section#Career {
     color: black !important;
 }
 .BTN-EXTRA-COLOR-CHANGE{
-    background: #FDAB28 !important;
+    background: #416446 !important;
 }
 .BTN-EXTRA-COLOR-CHANGE:hover{
-    background: #FDAB28 !important;
+    background: #416446 !important;
 }
 .faqs-heading {
     text-align: center;
@@ -929,6 +948,18 @@ section#Career {
 }
 .extra-margin-top-add{
     margin-top: 10px;
+}
+.first-faq-box .faqs-third-heading{
+color: rgb(255, 255, 255) !important;
+}
+.first-faq-box .faqs-description{
+    color: white !important;
+}
+.second-faq-box{
+    background-image: url("../../Images/faqs-image/first-image-yellow-color-second-image.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 #footer{
     background: #000000;
@@ -1017,4 +1048,4 @@ section#Career {
 .copyright-description {
     color: white;
     margin-bottom: 0px;
-}
+} 
