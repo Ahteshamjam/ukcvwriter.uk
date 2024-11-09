@@ -432,6 +432,48 @@
                 </div>
             </section>
         </section>
+        <section id="portfolio" class="containers">
+            <section class="inner-section">
+                <h2 class="portfolio-heading">Get satisfaction at first sight-our sample work
+                </h2>
+                <div class="portfolio-main-box">
+                    <div class="testimonial-container" onmousedown="return false">
+                        <div class="testimonial-slide active">
+                            <div class="testimonial-content"><img src="../../Images/Portfolio/resume_1.webp" alt="First-image" class="portfolio-image"></div>
+                        </div>
+                        <div class="testimonial-slide">
+                            <div class="testimonial-content"><img src="../../Images/Portfolio/resume_2.webp" alt="First-image" class="portfolio-image"></div>
+            
+                        </div>
+                        <div class="testimonial-slide">
+                            <div class="testimonial-content"><img src="../../Images/Portfolio/resume_3.webp" alt="First-image" class="portfolio-image"></div>
+            
+                        </div>
+                        <div class="testimonial-slide">
+                            <div class="testimonial-content"><img src="../../Images/Portfolio/resume_5.webp" alt="First-image" class="portfolio-image"></div>
+            
+                        </div>
+                        <div class="testimonial-slide">
+                            <div class="testimonial-content"><img src="../../Images/Portfolio/resume_6.webp" alt="First-image" class="portfolio-image"></div>
+            
+                        </div>
+                    
+                        <!-- Navigation Controls -->
+                        <button class="nav-btn prev-btn" onclick="showPreviousTestimonial()">&#10094;</button>
+                        <button class="nav-btn next-btn" onclick="showNextTestimonial()">&#10095;</button>
+                    
+                        <!-- Pagination Dots -->
+                        <div class="pagination">
+                            <span class="dot" onclick="jumpToTestimonial(0)"></span>
+                            <span class="dot" onclick="jumpToTestimonial(1)"></span>
+                            <span class="dot" onclick="jumpToTestimonial(2)"></span>
+                            <span class="dot" onclick="jumpToTestimonial(3)"></span>
+                            <span class="dot" onclick="jumpToTestimonial(4)"></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
     </main>
     <footer>
         <section id="footer" class="containers">
@@ -509,5 +551,75 @@
             }
         });
     </script>
+
+
+<!-- PORTFOLIO JAVASCRIPT  -->
+<script>
+    let currentTestimonialIndex = 0;
+const testimonials = document.querySelectorAll('.testimonial-slide');
+const dots = document.querySelectorAll('.dot');
+const intervalTime = 3000; // Auto-slide interval in milliseconds
+let autoPlayInterval;
+
+// Function to show the next set of testimonials
+function showNextTestimonial() {
+ testimonials.forEach(slide => slide.classList.remove('active'));
+ dots.forEach(dot => dot.classList.remove('active'));
+ currentTestimonialIndex = (currentTestimonialIndex + 1) % testimonials.length;
+ updateVisibleTestimonials();
+}
+
+// Function to show the previous set of testimonials
+function showPreviousTestimonial() {
+ testimonials.forEach(slide => slide.classList.remove('active'));
+ dots.forEach(dot => dot.classList.remove('active'));
+ currentTestimonialIndex = (currentTestimonialIndex - 1 + testimonials.length) % testimonials.length;
+ updateVisibleTestimonials();
+}
+
+// Function to jump to a specific testimonial based on pagination dot
+function jumpToTestimonial(index) {
+ testimonials.forEach(slide => slide.classList.remove('active'));
+ dots.forEach(dot => dot.classList.remove('active'));
+ currentTestimonialIndex = index;
+ updateVisibleTestimonials();
+ stopAutoPlay();
+ startAutoPlay();
+}
+
+// Function to update visible testimonials (showing 3 at a time) and active dot
+function updateVisibleTestimonials() {
+ for (let i = 0; i < 3; i++) {
+     const index = (currentTestimonialIndex + i) % testimonials.length;
+     testimonials[index].classList.add('active');
+ }
+ dots[currentTestimonialIndex].classList.add('active');
+}
+
+// Auto-play function
+function startAutoPlay() {
+ autoPlayInterval = setInterval(showNextTestimonial, intervalTime);
+}
+
+// Stop auto-play function
+function stopAutoPlay() {
+ clearInterval(autoPlayInterval);
+}
+
+// Start auto-play on page load
+startAutoPlay();
+
+// Restart auto-play after manual navigation
+document.querySelectorAll('.nav-btn').forEach(button => {
+ button.addEventListener('click', () => {
+     stopAutoPlay();
+     startAutoPlay();
+ });
+});
+
+// Initialize visible testimonials and active dot on page load
+updateVisibleTestimonials();
+
+     </script>
 </body>
 </html>

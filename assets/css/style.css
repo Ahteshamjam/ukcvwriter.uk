@@ -916,6 +916,9 @@ section#Career {
 .BTN-EXTRA-COLOR-CHANGE:hover{
     background: #416446 !important;
 }
+#faqs {
+    background: #f4eae1;
+}
 .faqs-heading {
     text-align: center;
     font-size: 40px;
@@ -960,6 +963,92 @@ color: rgb(255, 255, 255) !important;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+#portfolio{
+    padding-top: 0px;
+    background: #f4eae1;
+}
+.portfolio-main-box{
+    width: 100%;
+    /* border: 2px solid purple; */
+    margin-top: 40px;
+}
+.testimonial-container {
+    display: flex;
+    overflow: hidden;
+    width: 80%;
+    margin: auto;
+    position: relative;
+    user-select: none; /* Disable text selection */
+  }
+  
+  .testimonial-slide {
+    flex: 0 0 33.33%; /* Show 3 testimonials at a time */
+    opacity: 0.5;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease;
+    display: none;
+  }
+  
+  .testimonial-slide.active {
+    display: block;
+    opacity: 1;
+    transform: scale(1.05); /* Zoom effect on active slide */
+  }
+  
+  .testimonial-content {
+    /* background-color: #f0f0f0; */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    /* box-shadow: 4px 4px 10px rgb(30 30 30); */
+  }
+  
+  .nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+  }
+  
+  .prev-btn {
+    left: 0;
+  }
+  
+  .next-btn {
+    right: 0;
+  }
+  
+  /* Pagination Dots */
+  .pagination {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .dot.active {
+    background-color: #333;
+  }
+  .portfolio-image{
+    width: 100%;
+  }
+  .portfolio-heading {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 700;
 }
 #footer{
     background: #000000;
